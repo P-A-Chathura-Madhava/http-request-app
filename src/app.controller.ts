@@ -11,4 +11,9 @@ export class AppController {
   public async listApi() {
     return await this.appService.apiFindAll();
   }
+
+  @Get('data')
+  public async dataFromLocalApi() {
+    return await this.appService.getAllDataApi();
+  }
 }

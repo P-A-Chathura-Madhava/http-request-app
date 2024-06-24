@@ -16,4 +16,15 @@ export class AppService {
           throw new BadRequestException();
       }
   }
+
+  public async getAllDataApi() { 
+    try {
+        const response = await firstValueFrom(
+            this.httpService.get("http://localhost:3002/test/getData")
+        )
+        return response.data;            
+    } catch (error) {
+        throw new BadRequestException();
+    }
+}
 }
